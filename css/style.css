@@ -23,17 +23,18 @@ body {
     z-index: 1000;
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
+
 .header-content {
     display: flex;
     align-items: center;
-    padding: 0 2rem 0 0;
+    padding: 0 5rem 0 0;
     max-width: 1400px;
-    margin: 0 auto;
+    margin: 0 5rem;
     position: relative;
 }
 
 .header-logo {
-    height: 70px;
+    height: 75px;
     width: auto;
     border-radius: 4px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.2);
@@ -95,8 +96,8 @@ header h1 {
 /* Panneau de contrôle */
 #controls {
     position: absolute;
-    top: 150px; /* Position sous le header */
-    left: 20px;
+    top: 140px; /* Position sous le header */
+    left: 8px;
     z-index: 1000;
     background: rgba(26, 32, 44, 0.95);
     border-radius: 8px;
@@ -130,6 +131,12 @@ header h1 {
 }
 
 /* Légende */
+.legend-separator {
+    border: none;
+    border-top: 1px solid #444;
+    margin: 18px 0 0px 0;
+    opacity: 0.7;
+}
 #legend {
     padding: 15px;
     margin: 0;
@@ -210,19 +217,33 @@ header h1 {
     font-size: 1.1rem;
     line-height: 1.6;
 }
+.legend-grid {
+    display: flex;
+    flex-direction: row;
+    gap: 18px;
+    width: 100%;
+    justify-content: space-between;
+}
+.legend-column {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1;
+}
+/* (Ancien .legend-container n'est plus utilisé pour la légende principale) */
 
 .legend-item {
     display: flex;
     align-items: center;
-    margin-bottom: 10px;
-    padding: 4px 0;
+    margin-bottom: 2px; /* Réduit de 10px à 5px */
+    padding: 2px 0; /* Réduit de 4px à 2px */
 }
 
 .legend-color {
     width: 18px;
     height: 18px;
     margin-right: 12px;
-    border-radius: 3px;
+    border-radius: 5px;
     border: 1px solid rgba(255, 255, 255, 0.1);
     flex-shrink: 0;
 }
@@ -296,6 +317,25 @@ input:checked + .toggle-slider:before {
     margin-top: 15px;
     padding-top: 10px;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+.opacity-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+}
+.opacity-label {
+    white-space: nowrap;
+    color: #e2e8f0;
+    font-size: 0.95em;
+    font-weight: 400;
+    margin-right: 8px;
+    flex: 0 0 auto;
+}
+.opacity-row input[type="range"] {
+    flex: 1 1 auto;
+    margin: 0;
+    min-width: 80px;
 }
 
 .opacity-control label {
