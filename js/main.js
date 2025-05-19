@@ -47,7 +47,7 @@ const cornFieldLayer = L.tileLayer(
     maxZoom: 25,
     tileSize: 256,
     opacity: 0.6,
-    attribution: 'Corn field',
+    attribution: '',
     crossOrigin: true
   }
 );
@@ -133,19 +133,33 @@ function populateLegend() {
 
 
     // 3. Légende de l'occupation du sol
-    legendConfig.labels.forEach((label, index) => {
-        const legendItem = document.createElement('div');
-        legendItem.className = 'legend-item';
-        const colorBox = document.createElement('div');
-        colorBox.className = 'legend-color';
-        colorBox.style.backgroundColor = legendConfig.colors[index];
-        const labelElement = document.createElement('span');
-        labelElement.className = 'legend-label';
-        labelElement.textContent = label;
-        legendItem.appendChild(colorBox);
-        legendItem.appendChild(labelElement);
-        legendContainer.appendChild(legendItem);
-    });
+    // Création d'un conteneur grid pour la légende
+    const legendGrid = document.createElement('div');
+    legendGrid.className = 'legend-grid';
+
+    // Deux colonnes de trois items chacune
+    for (let col = 0; col < 2; col++) {
+        const columnDiv = document.createElement('div');
+        columnDiv.className = 'legend-column';
+        for (let row = 0; row < 3; row++) {
+            const index = col * 3 + row;
+            if (legendConfig.labels[index]) {
+                const legendItem = document.createElement('div');
+                legendItem.className = 'legend-item';
+                const colorBox = document.createElement('div');
+                colorBox.className = 'legend-color';
+                colorBox.style.backgroundColor = legendConfig.colors[index];
+                const labelElement = document.createElement('span');
+                labelElement.className = 'legend-label';
+                labelElement.textContent = legendConfig.labels[index];
+                legendItem.appendChild(colorBox);
+                legendItem.appendChild(labelElement);
+                columnDiv.appendChild(legendItem);
+            }
+        }
+        legendGrid.appendChild(columnDiv);
+    }
+    legendContainer.appendChild(legendGrid);
 
     // 4. Trait horizontal gris
     const sep = document.createElement('hr');
@@ -170,8 +184,10 @@ function populateLegend() {
     const cornOpacityDiv = document.createElement('div');
     cornOpacityDiv.className = 'opacity-control';
     cornOpacityDiv.innerHTML = `
-        <label for="corn-opacity">Opacité: <span id="corn-opacity-value">100</span>%</label>
-        <input type="range" id="corn-opacity" min="0" max="100" value="100">
+        <div class="opacity-row">
+            <label for="corn-opacity" class="opacity-label">Opacité : <span id="corn-opacity-value">60</span>%</label>
+            <input type="range" id="corn-opacity" min="0" max="100" value="60">
+        </div>
     `;
     legendContainer.appendChild(cornOpacityDiv);
 
@@ -185,6 +201,11 @@ function populateLegend() {
         <span>100 %</span>
     `;
     legendContainer.appendChild(cornLegendDiv);
+
+    // Trait horizontal gris entre la légende corn field et le bouton "Mon mémoire"
+    const separator = document.createElement('hr');
+    separator.className = 'legend-separator';
+    legendContainer.appendChild(separator);
 
 
     // Lier les nouveaux contrôles (après insertion dans le DOM)
