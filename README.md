@@ -1,4 +1,4 @@
-# MEMOIRE_MASSOT
+# MEMOIRE Nicolas MASSOT
 
 ## Application de Cartographie de l'Occupation du Sol
 
