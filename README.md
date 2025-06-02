@@ -16,7 +16,8 @@ Ce mémoire trouve son origine dans un double contexte. D’abord, il y a une pr
 L’objectif est de produire une carte d’occupation du sol à **1 mètre de résolution** et à **six classes** à l’aide d’un modèle **U-Net** entraîné sur des données raster enrichies : canaux visibles et infra-rouge, indices spectraux, éléments morphologiques : rouge, vert, infra-rouge, NDVI, NDWI, NDGI, MNH (MNT-MNS), Inverse Difference Moment (IDM), Patch Shape Index (PSI). 
 
 La chaîne de traitements originale concue dans le cadre de ce projet est décrite par ce diagramme d'activité :
-[Image](https://github.com/user-attachments/assets/020fd19a-ec61-4bad-b679-75ba160eb240)
+
+![Image](https://github.com/user-attachments/assets/020fd19a-ec61-4bad-b679-75ba160eb240)
 
 ---
 
