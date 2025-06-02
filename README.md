@@ -45,7 +45,7 @@ Tout le code Python et les notebooks sont regroupés dans le dossier `code/` :
 - `code/04_INFERER.py` : Inférer le modèle sur chaque sous-ensemble
 - `code/05_FUSIONNER_SOUS_ENSEMBLE.py` : Fusionner les sous-ensemble avec la fenêtre de Hann
 - `code/06_CARTE_PROBA.py` : Créer la carte des probabilités en assignant pour chaque pixel la probabilité maximale d'appartenance à une classe
-- `modele/unet_model.pth` : Poids du modèle entraîné
+- `modele/MODEL_UNET_MASSOT.keras` : Poids du modèle entraîné
 
 ---
 
