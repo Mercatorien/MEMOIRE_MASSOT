@@ -35,6 +35,13 @@ L'entraînement du modèle U-Net a été optimisé pour maximiser la précision 
 
 ---
 
+## Visualisation
+
+Le résultat de la chaîne de traitements est visible ici : 
+→ <a href="https://mercatorien.github.io/MEMOIRE_MASSOT/">Carte interactive</a>
+
+---
+
 ## Structure du dépôt
 
 Tout le code Python et les notebooks sont regroupés dans le dossier `code/` :
@@ -67,14 +74,6 @@ Seuls les deux fichiers suivants sont **adaptés** de projets sous licence MIT :
 Ces deux fichiers respectent leur licence d’origine, consultable dans [`LICENSE-MIT.txt`](LICENSE-MIT.txt).
 
 ---
-
-
-## Visualisation
-
-Le résultat de la chaîne de traitements est visible ici : <a href="https://mercatorien.github.io/MEMOIRE_MASSOT/">Carte interactive</a>
-
----
-
 
 ## Remerciements
 
