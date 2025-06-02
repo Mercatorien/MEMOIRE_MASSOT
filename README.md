@@ -3,6 +3,8 @@
 Ce dépôt a été réalisé par **Nicolas Massot** dans le cadre de mon **mémoire de Master Géomatique et Conduite de Projets Territoriaux**, soutenu en 2025.  
 Il porte sur l’apport de l’apprentissage profond à la cartographie de l’occupation du sol, avec une étude de cas sur le **territoire du Grand Avignon**.
 
+Sous la direction de M. Mounir Redjimi & M. Didier Josselin
+
 ---
 
 ## Contexte du projet 
