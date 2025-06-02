@@ -38,13 +38,13 @@ L'entraînement du modèle U-Net a été optimisé pour maximiser la précision 
 ## 📁 Structure du dépôt
 
 Tout le code Python et les notebooks sont regroupés dans le dossier `code/` :
+- `masque_entrainement/masque_entraînement.fmw` : Script FME pour générer le masque à partir des couches SIG
 - `code/01_PREPROCESSER.py` : Prétraiter les images raster : normaliser les valeurs des images, créer des binômes image/masque de 128 × 128. Autant de binômes par classe
 - `code/02_ENTRAINER.ipynb` : Entraîner et évaluer le modèle
 - `code/03_DECOUPER_SOUS_ENSEMBLE.py` : Découper le raster d'inférence en sous-ensemble
 - `code/04_INFERER.py` : Inférer le modèle sur chaque sous-ensemble
 - `code/05_FUSIONNER_SOUS_ENSEMBLE.py` : Fusionner les sous-ensemble avec la fenêtre de Hann
 - `modele/unet_model.pth` : Poids du modèle entraîné
-- `masque_entrainement/masque_entraînement.fmw` : Script FME pour générer le masque à partir des couches SIG
 
 ---
 
