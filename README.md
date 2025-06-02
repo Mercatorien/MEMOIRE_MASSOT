@@ -9,13 +9,14 @@ Il porte sur l’apport de l’apprentissage profond à la cartographie de l’o
 
 Ce mémoire trouve son origine dans un double contexte. D’abord, il y a une pression à la production de données d’occupation du sol suite aux récentes actions législatives, avec l’objectif **Zéro Artificialisation Nette** en tête. Deuxièmement, les données en libre accès sur le marché sont **perfectibles** sur certains points de vue, qui sont éveloppés et justifiés, notamment en ce qui a trait à l’agilité, la précision et la résolution spatiale et temporelle.
 
+---
 
 ## Objectif du projet
 
 L’objectif est de produire une carte d’occupation du sol à **1 mètre de résolution** et à **six classes** à l’aide d’un modèle **U-Net** entraîné sur des données raster enrichies : canaux visibles et infra-rouge, indices spectraux, éléments morphologiques : rouge, vert, infra-rouge, NDVI, NDWI, NDGI, MNH (MNT-MNS), Inverse Difference Moment (IDM), Patch Shape Index (PSI). 
 
 La chaîne de traitements originale concue dans le cadre de ce projet est décrite par ce diagramme d'activité :
-Diagramme d'activité/diagramme_activite_methode.png
+![Diagramme d'activité](Diagramme d'activité/diagramme_activite_methode.png)
 
 
 ---
@@ -35,8 +36,8 @@ Tout le code Python et les notebooks sont regroupés dans le dossier `code/` :
 - `code/03_DECOUPER_SOUS_ENSEMBLE.py` : Découper le raster d'inférence en sous-ensemble
 - `code/04_INFERER.py` : Inférer le modèle sur chaque sous-ensemble
 - `code/05_FUSIONNER_SOUS_ENSEMBLE.py` : Fusionner les sous-ensemble avec la fenêtre de Hann
-- `modele/unet_model.pth` : poids du modèle entraîné (PyTorch)
-- `masque_entrainement/masque_entraînement.fmw` : script FME pour générer le masque à partir des couches SIG
+- `modele/unet_model.pth` : Poids du modèle entraîné
+- `masque_entrainement/masque_entraînement.fmw` : Script FME pour générer le masque à partir des couches SIG
 
 ---
 
@@ -59,11 +60,22 @@ Ces deux fichiers respectent leur licence d’origine, consultable dans [`LICENS
 
 ---
 
-## 🙏 Remerciements
 
+## Visualisation
+
+Le résultat de la chaîne de traitements est visible ici : <a href="https://mercatorien.github.io/MEMOIRE_MASSOT/">Carte interactive</a>
+
+---
+
+
+## Remerciements
+
+<p align="right"><em>À mes parents qui m’ont permis de faire des études, <br>
+À Monsieur Redjimi qui m’a tant appris,<br>
+Merci.</em></p>
 
 
 <hr>
 <p align="center">
-  © 2025 Nicolas Massot • <a href="https://nicolasmassot.fr">Contact</a> • Licence GNU GPL v3
+  © 2025 Nicolas Massot • <a href="https://nicolasmassot.fr">Portfolio</a> • Licence GNU GPL v3
 </p>
