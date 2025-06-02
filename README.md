@@ -3,6 +3,11 @@
 Ce dépôt a été réalisé par **Nicolas Massot** dans le cadre d’un **mémoire de Master** en géomatique, soutenu en 2025.  
 Il porte sur l’apport de l’apprentissage profond à la cartographie de l’occupation du sol, avec une étude de cas sur le **territoire du Grand Avignon**.
 
+<h1 align="center">Apport des réseaux de<br>neurones convolutifs à la<br>cartographie de<br>l’occupation du sol</h1>
+
+<h2 align="center">Cas d’usage sur le Grand Avignon</h2>
+
+
 ---
 
 ## Contexte du projet 
