@@ -86,5 +86,5 @@ Merci.</em></p>
 
 <hr>
 <p align="center">
-  © 2025 Nicolas Massot • <a href="https://nicolasmassot.fr">Portfolio</a> • Licence GNU GPL v3
+  © 2025 Nicolas Massot • Je pense donc je GIS • <a href="https://nicolasmassot.fr">Portfolio</a> • Licence GNU GPL v3
 </p>
