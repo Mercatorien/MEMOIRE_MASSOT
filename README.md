@@ -91,6 +91,7 @@ Ces deux fichiers respectent leur licence d’origine, consultable dans [`LICENS
 À Monsieur Redjimi qui m’a tant appris,<br>
 Merci.</em></p>
 
+<br>
 
 <hr>
 <p align="center">
