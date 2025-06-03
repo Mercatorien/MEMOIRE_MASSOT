@@ -122,12 +122,12 @@ Modifier
     </tr>
   </thead>
   <tbody>
-    <tr><td>01_PREPROCESSER</td><td>GitHub</td><td>GPL v3 + MIT (code adapté)</td></tr>
-    <tr><td>02_ENTRAINER</td><td>GitHub</td><td>GPL v3 + MIT (code adapté)</td></tr>
-    <tr><td>03_DECOUPER_SOUS_ENSEMBLE</td><td>GitHub</td><td>GPL v3</td></tr>
-    <tr><td>04_INFERER</td><td>GitHub</td><td>GPL v3</td></tr>
-    <tr><td>05_FUSIONNER_SOUS_ENSEMBLE</td><td>GitHub</td><td>GPL v3</td></tr>
-    <tr><td>06_CARTE_PROBA</td><td>GitHub</td><td>GPL v3</td></tr>
+    <tr><td>01_PREPROCESSER.py</td><td>GitHub</td><td>GPL v3 + MIT (code adapté)</td></tr>
+    <tr><td>02_ENTRAINER.py</td><td>GitHub</td><td>GPL v3 + MIT (code adapté)</td></tr>
+    <tr><td>03_DECOUPER_SOUS_ENSEMBLE.py</td><td>GitHub</td><td>GPL v3</td></tr>
+    <tr><td>04_INFERER</td><td>GitHub.py</td><td>GPL v3</td></tr>
+    <tr><td>05_FUSIONNER_SOUS_ENSEMBLE.py</td><td>GitHub</td><td>GPL v3</td></tr>
+    <tr><td>06_CARTE_PROBA.py</td><td>GitHub</td><td>GPL v3</td></tr>
     <tr><td>masque_entraînement.fmw</td><td>GitHub</td><td>GPL v3</td></tr>
     <tr><td>lc.json</td><td>GitHub</td><td>GPL v3</td></tr>
     <tr><td>lcs.rar (masque d'entraînement)</td><td>Zenodo</td><td>LICENCE OUVERTE / OPEN LICENCE 2.0</td></tr>
