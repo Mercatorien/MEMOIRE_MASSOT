@@ -1,7 +1,6 @@
 <h1 align="center">Apport des réseaux de neurones convolutifs à la cartographie de l’occupation du sol : <br> Cas d’usage sur le Grand Avignon</h1> 
 
-Ce dépôt a été réalisé par **Nicolas Massot** dans le cadre de mon **mémoire de Master Géomatique et Conduite de Projets Territoriaux**, soutenu en 2025.  
-Il porte sur l’apport de l’apprentissage profond à la cartographie de l’occupation du sol, avec une étude de cas sur le **territoire du Grand Avignon**.
+Ce dépôt a été réalisé dans le cadre de mon **mémoire de Master Géomatique et Conduite de Projets Territoriaux**, soutenu en 2025. Il propose la création d'une chaîne de traitements qui a pour but de combler certains axes d'améliorations identifiés dans les données d'occupation du sol actuelles, tout en répondant autant que possible aux besoins métiers des collectivités territoriales dans le suivi de l'occupation du sol.
 
 Sous la direction de M. Mounir Redjimi & M. Didier Josselin
 
@@ -46,13 +45,13 @@ Le résultat de la chaîne de traitements est visible ici :
 
 ## Structure du dépôt
 
-Tout le code Python et les notebooks sont regroupés dans le dossier `code/` :
-- `masque_entrainement/masque_entraînement.fmw` : Script FME pour générer le masque à partir des couches SIG
+Tout le code Python et les notebooks sont regroupés dans le dossier `code/`, et le modèle FME pour la création du masque d'entraînement se trouve dans le dossier `masque_entrainement/` :
+- `masque_entrainement/masque_entraînement.fmw` : Script FME pour générer le masque 
 - `code/01_PREPROCESSER.py` : Prétraiter les images raster : normaliser les valeurs des images, créer des binômes image/masque de 128 × 128. Autant de binômes par classe
-- `code/02_ENTRAINER.ipynb` : Entraîner et évaluer le modèle
-- `code/03_DECOUPER_SOUS_ENSEMBLE.py` : Découper le raster d'inférence en sous-ensemble
+- `code/02_ENTRAINER.ipynb` : Entraîner, évaluer et enregistrer le modèle
+- `code/03_DECOUPER_SOUS_ENSEMBLE.py` : Découper le raster d'inférence en sous-ensembles
 - `code/04_INFERER.py` : Inférer le modèle sur chaque sous-ensemble
-- `code/05_FUSIONNER_SOUS_ENSEMBLE.py` : Fusionner les sous-ensemble avec la fenêtre de Hann
+- `code/05_FUSIONNER_SOUS_ENSEMBLE.py` : Fusionner les sous-ensembles avec la fenêtre de Hann
 - `code/06_CARTE_PROBA.py` : Créer la carte des probabilités en assignant pour chaque pixel la probabilité maximale d'appartenance à une classe
 
 ---
@@ -67,9 +66,9 @@ Les données volumineuses (Segmentation, images et masque d'entraînement, poids
 
 ## Licences
 
-Ce dépôt est publié sous **licence GNU General Public License (GPL v3)**. Voir le fichier [`LICENSE.txt`](LICENSE.txt).
+Les codes python et le modèle FME de ce dépôt sont publiés sous **licence GNU General Public License (GPL v3)**. Voir le fichier [`LICENSE.txt`](LICENSE.txt).
 
-Seuls les deux fichiers suivants sont **adaptés** de projets sous licence MIT :
+Seuls les deux fichiers suivants sont **adaptés** de projets sous licence MIT de Ramadhan, 2024 - https://github.com/ramiqcom
 - `code/01_PREPROCESSER.py`
 - `code/02_ENTRAINER.ipynb`
 
