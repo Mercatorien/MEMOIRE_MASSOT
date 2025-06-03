@@ -15,14 +15,17 @@ Ce mémoire trouve son origine dans un double contexte. D’abord, il y a une pr
 ## Objectif et méthode du projet
 
 L’objectif est de produire une carte d’occupation du sol à **1 mètre de résolution** et à **six classes**, à l’aide d’un modèle **U-Net** entraîné sur des données raster enrichies : canaux visibles et infra-rouge, indices spectraux, éléments morphologiques : rouge, vert, infra-rouge, NDVI, NDWI, NDGI, MNH (MNT-MNS), Inverse Difference Moment (IDM), Patch Shape Index (PSI). 
+<br>
 
 <div align="center">
   <img src="https://github.com/user-attachments/assets/2a61d04d-a6ff-41f3-933e-c76e5e33b398" width="70%"/>
 </div>
 
+<br> 
+<br>
 
 La chaîne de traitements originale concue dans le cadre de ce projet est décrite par ce diagramme d'activité :
-
+<br>
 <div align="center">
   <img src="https://github.com/user-attachments/assets/1b0c699e-8101-4a38-b78c-db67f01886f2" width="70%"/>
 </div>
@@ -64,6 +67,18 @@ Tout le code Python et les notebooks sont regroupés dans le dossier `code/`, et
 - `code/05_FUSIONNER_SOUS_ENSEMBLE.py` : Fusionner les sous-ensembles avec la fenêtre de Hann
 - `code/06_CARTE_PROBA.py` : Créer la carte des probabilités en assignant pour chaque pixel la probabilité maximale d'appartenance à une classe
 
+<br>
+
+Ce dépôt GitHub est associé un autre dépôt Zenodo qui contient 
+- `images.rar` : Patchs d'images d'entraînement découpés en 128 × 128 pixels
+- `lcs.rar` : Patchs de masque d'entraînement découpés en 128 × 128 pixels
+- `MODEL_UNET_MASSOT.keras` : Poids du modèle U-Net.
+- `UNET_MASSOT.tif` : Segmentation du modèle U-Net
+- `STYLE_SEGMENTATION.qml` : Style du fichier
+- `CARTE_PROBA.tif` : Carte des probabilités maximale pour l'appartenance des classes
+- `STYLE_PROBA.qml` : Style du fichier 
+
+
 ---
 
 ## Données
@@ -75,16 +90,60 @@ Les données volumineuses (Segmentation, images et masque d'entraînement, poids
 ---
 
 ## Licences
+Ce dépôt contient à la fois du code source, des modèles, et des données. Plusieurs licences s'appliquent en fonction des fichiers.
 
-Les codes python et le modèle FME de ce dépôt sont publiés sous **licence GNU General Public License (GPL v3)**. Voir le fichier [`LICENSE.txt`](LICENSE.txt).
 
-Seuls les deux fichiers suivants sont **adaptés** de projets sous licence MIT de Ramadhan, 2024 - https://github.com/ramiqcom
+### 1. Code
+Les scripts Python et le modèle FME sont publiés sous **licence GNU General Public License v3 (GPL v3)**.
+Voir le fichier [`LICENSE.txt`](LICENSE.txt) pour le texte complet.
+
+Deux fichiers sont adaptés de projets existants publiés sous licence **MIT** (Ramadhan, 2024 – https://github.com/ramiqcom) :
 - `code/01_PREPROCESSER.py`
 - `code/02_ENTRAINER.ipynb`
 
-Ces deux fichiers respectent leur licence d’origine, consultable dans [`LICENSE-MIT.txt`](LICENSE-MIT.txt).
+Ces fichiers respectent leur licence d'origine, disponible dans [`LICENSE-MIT.txt`](LICENSE-MIT.txt).
+
+
+### 2. Données
+Les fichiers d’entraînement sont dérivés de données produites par l’IGN (RGE ALTI®, BD ORTHO® IRC), publiées sous **Licence Ouverte 2.0 / Open Licence 2.0** https://www.etalab.gouv.fr/licence-ouverte-open-licence.
+
+
+### 3. Modèle, sortie, et style
+Les fichiers résultant de l'entraînement et de la production cartographique sont publiés sous licence Creative Commons Attribution - Partage dans les mêmes conditions (CC BY-SA).
+Cela concerne notamment les fichiers .keras, .qml, .tif.
+
+Tableau récapitulatif
+html
+Copier
+Modifier
+<table>
+  <thead>
+    <tr>
+      <th>Fichier</th>
+      <th>Dépôt</th>
+      <th>Licence</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>01_PREPROCESSER</td><td>GitHub</td><td>GPL v3 + MIT (code adapté)</td></tr>
+    <tr><td>02_ENTRAINER</td><td>GitHub</td><td>GPL v3 + MIT (code adapté)</td></tr>
+    <tr><td>03_DECOUPER_SOUS_ENSEMBLE</td><td>GitHub</td><td>GPL v3</td></tr>
+    <tr><td>04_INFERER</td><td>GitHub</td><td>GPL v3</td></tr>
+    <tr><td>05_FUSIONNER_SOUS_ENSEMBLE</td><td>GitHub</td><td>GPL v3</td></tr>
+    <tr><td>06_CARTE_PROBA</td><td>GitHub</td><td>GPL v3</td></tr>
+    <tr><td>masque_entraînement.fmw</td><td>GitHub</td><td>GPL v3</td></tr>
+    <tr><td>lc.json</td><td>GitHub</td><td>GPL v3</td></tr>
+    <tr><td>lcs.rar (masque d'entraînement)</td><td>Zenodo</td><td>LICENCE OUVERTE / OPEN LICENCE 2.0</td></tr>
+    <tr><td>images.rar (image d'entraînement)</td><td>Zenodo</td><td>LICENCE OUVERTE / OPEN LICENCE 2.0</td></tr>
+    <tr><td>UNET_MASSOT.tif</td><td>Zenodo</td><td>CC BY SA</td></tr>
+    <tr><td>STYLE_SEGMENTATION.qml</td><td>Zenodo</td><td>CC BY SA</td></tr>
+    <tr><td>MODEL_UNET_MASSOT.keras</td><td>Zenodo</td><td>CC BY SA</td></tr>
+    <tr><td>CARTE_PROBA.tif</td><td>Zenodo</td><td>CC BY SA</td></tr>
+  </tbody>
+</table>
 
 ---
+
 
 ## Remerciements
 
