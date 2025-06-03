@@ -16,12 +16,16 @@ Ce mémoire trouve son origine dans un double contexte. D’abord, il y a une pr
 
 L’objectif est de produire une carte d’occupation du sol à **1 mètre de résolution** et à **six classes**, à l’aide d’un modèle **U-Net** entraîné sur des données raster enrichies : canaux visibles et infra-rouge, indices spectraux, éléments morphologiques : rouge, vert, infra-rouge, NDVI, NDWI, NDGI, MNH (MNT-MNS), Inverse Difference Moment (IDM), Patch Shape Index (PSI). 
 
-![Image](https://github.com/user-attachments/assets/2a61d04d-a6ff-41f3-933e-c76e5e33b398) 
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/2a61d04d-a6ff-41f3-933e-c76e5e33b398" width="70%"/>
+</div>
 
 
 La chaîne de traitements originale concue dans le cadre de ce projet est décrite par ce diagramme d'activité :
 
-![Image](https://github.com/user-attachments/assets/1b0c699e-8101-4a38-b78c-db67f01886f2)
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/1b0c699e-8101-4a38-b78c-db67f01886f2" width="70%"/>
+</div>
 
 ---
 
@@ -29,10 +33,15 @@ La chaîne de traitements originale concue dans le cadre de ce projet est décri
 
 L'entraînement du modèle U-Net a été optimisé pour maximiser la précision des prédictions sur les différentes typologies présentes dans le territoire. Le **score-F1 de la segmentation est de 0.91**, et l'**overall accuracy est de 92.2%**.
 
-![Image](https://github.com/user-attachments/assets/429858f5-6356-4cb0-bc57-79861603f978)
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/429858f5-6356-4cb0-bc57-79861603f978" width="70%"/>
+</div>
 
+<br><br>
 
-![Image](https://github.com/user-attachments/assets/60973231-de09-4efc-b315-26cde251f841)
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/60973231-de09-4efc-b315-26cde251f841" width="70%"/>
+</div>
 
 ---
 
