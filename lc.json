@@ -1,0 +1,31 @@
+{
+  "palette": [
+    "dc1010",
+    "79de13",
+    "464646",
+    "2db9ff",
+    "d5ffbf",
+    "fffa9b"
+    
+    
+  ],
+  "values": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+
+  
+  "label": [
+"Bâtiment",
+"Arbre",
+"Bitume",
+"Eau",
+"Herbe",
+"Sol nu"
+
+  ]
+}
