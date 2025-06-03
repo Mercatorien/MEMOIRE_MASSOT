@@ -67,7 +67,10 @@ Tout le code Python et les notebooks sont regroupés dans le dossier `code/`, et
 - `code/05_FUSIONNER_SOUS_ENSEMBLE.py` : Fusionner les sous-ensembles avec la fenêtre de Hann
 - `code/06_CARTE_PROBA.py` : Créer la carte des probabilités en assignant pour chaque pixel la probabilité maximale d'appartenance à une classe
 
-<br>
+
+---
+
+## Dépôt Zenodo
 
 Ce dépôt GitHub est associé un autre dépôt Zenodo qui contient 
 - `images.rar` : Patchs d'images d'entraînement découpés en 128 × 128 pixels
@@ -78,14 +81,8 @@ Ce dépôt GitHub est associé un autre dépôt Zenodo qui contient
 - `CARTE_PROBA.tif` : Carte des probabilités maximale pour l'appartenance des classes
 - `STYLE_PROBA.qml` : Style du fichier 
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.15585313.svg)](https://doi.org/10.5281/zenodo.15585313)
 
----
-
-## Données
-
-// À compléter
-Les données volumineuses (Segmentation, images et masque d'entraînement, poids du modèle) seront hébergées sur **Nakala** et disponibles à cette adresse :  
-→  [https://doi.org/10.34847/nkl.xxxxxx](https://doi.org/10.34847/nkl.xxxxxx)
 
 ---
 
