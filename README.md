@@ -135,7 +135,7 @@ Un dépôt Zenodo complémentaire à ce GitHub contient :
 - `CARTE_PROBA.tif` : Carte des probabilités maximale pour l'appartenance des classes
 - `STYLE_PROBA.qml` : Style du fichier 
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.15585313.svg)](https://doi.org/10.5281/zenodo.15585313)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.15591285.svg)](https://doi.org/10.5281/zenodo.15591285)
 
 
 ---
