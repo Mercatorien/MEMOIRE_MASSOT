@@ -24,13 +24,67 @@ L’objectif est de produire une carte d’occupation du sol à **1 mètre de r�
 <br> 
 <br>
 
-La chaîne de traitements originale concue dans le cadre de ce projet est décrite par ce diagramme d'activité :
+Le masque d'entraînement est automatiquement réalisé à partir du script FME disponible ici : `masque_entrainement/masque_entraînement.fmw`. 
+Voici la composition des données agrègées à une grille d'un mètre :
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>Classe</strong></th>
+      <th><strong>Source</strong></th>
+      <th><strong>Ordre de priorité</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Bâtiment</td>
+      <td>LiDAR (classification = 6)</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>Arbre</td>
+      <td>LiDAR (classification = 4 ou 5)</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>Bitume</td>
+      <td>BD Topo (tronçon de routes), OSM (parking), Classification supervisée</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>Eau</td>
+      <td>BD Topo (surface hydrographique), BD Ortho (seuil NDWI)</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <td>Herbe</td>
+      <td>BD Ortho (seuil NDVI)</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <td>Sol nu</td>
+      <td>Le reste</td>
+      <td>6</td>
+    </tr>
+  </tbody>
+</table>
+
+<br> La chaîne de traitements du modèle `masque_entrainement/masque_entraînement.fmw` est décrite par ce diagramme d'activité : 
+
+
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/42d15d00-05d4-4590-94fe-683a36a9db69" width="70%"/>
+</div>
+
+
+<br> <br> La chaîne de traitements originale concue dans le cadre de ce projet est décrite par ce diagramme d'activité :
 <br>
 <div align="center">
   <img src="https://github.com/user-attachments/assets/1b0c699e-8101-4a38-b78c-db67f01886f2" width="70%"/>
 </div>
 
 ---
+
 
 ## Résultat 
 
@@ -57,8 +111,8 @@ Le résultat de la chaîne de traitements est visible ici :
 
 ## Structure du dépôt
 
-Tout le code Python et les notebooks sont regroupés dans le dossier `code/`, et le modèle FME pour la création du masque d'entraînement se trouve dans le dossier `masque_entrainement/` :
-- `masque_entrainement/masque_entraînement.fmw` : Script FME pour générer le masque
+Les codes et le notebook Python sont regroupés dans le dossier `code/`, et le modèle FME pour la création du masque d'entraînement se trouve dans le dossier `masque_entrainement/` :
+- `masque_entrainement/masque_entraînement.fmw` : Script FME pour générer le masque d'entraînement
 - `code/lc.json` : Mapping des couleurs 
 - `code/01_PREPROCESSER.py` : Prétraiter les images raster : normaliser les valeurs des images, créer des binômes image/masque de 128 × 128. Autant de binômes par classe
 - `code/02_ENTRAINER.ipynb` : Entraîner, évaluer et enregistrer le modèle
@@ -72,7 +126,7 @@ Tout le code Python et les notebooks sont regroupés dans le dossier `code/`, et
 
 ## Dépôt Zenodo
 
-Ce dépôt GitHub est associé un autre dépôt Zenodo qui contient 
+Un dépôt Zenodo complémentaire à ce GitHub contient :
 - `images.rar` : Patchs d'images d'entraînement découpés en 128 × 128 pixels
 - `lcs.rar` : Patchs de masque d'entraînement découpés en 128 × 128 pixels
 - `MODEL_UNET_MASSOT.keras` : Poids du modèle U-Net.
@@ -87,7 +141,7 @@ Ce dépôt GitHub est associé un autre dépôt Zenodo qui contient
 ---
 
 ## Licences
-Ce dépôt contient à la fois du code source, des modèles, et des données. Plusieurs licences s'appliquent en fonction des fichiers.
+Ces dépôts contienent à la fois du code source, des modèles, et des données. Plusieurs licences s'appliquent en fonction des fichiers.
 
 
 ### 1. Code
