@@ -94,7 +94,7 @@ L'entraînement du modèle U-Net a été optimisé pour maximiser la précision 
   <img src="https://github.com/user-attachments/assets/429858f5-6356-4cb0-bc57-79861603f978" width="70%"/>
 </div>
 
-<br><br>
+<br>
 
 <div align="center">
   <img src="https://github.com/user-attachments/assets/60973231-de09-4efc-b315-26cde251f841" width="70%"/>
