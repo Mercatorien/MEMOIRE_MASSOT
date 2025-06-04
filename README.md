@@ -24,7 +24,7 @@ L’objectif est de produire une carte d’occupation du sol à **1 mètre de r�
 <br> 
 <br>
 
-Le masque d'entraînement est automatiquement réalisé à partir du script FME disponible ici : `masque_entrainement/masque_entraînement.fmw`. 
+Le masque d'entraînement est automatiquement réalisé à partir du script FME disponible ici : `masque_entrainement/SCRIPT_MASQUE_ENTRAINEMENT.fmw`. 
 Voici la composition des données agrègées à une grille d'un mètre :
 
 <table>
@@ -69,7 +69,7 @@ Voici la composition des données agrègées à une grille d'un mètre :
   </tbody>
 </table>
 
-<br> La chaîne de traitements du modèle `masque_entrainement/masque_entraînement.fmw` est décrite par ce diagramme d'activité : 
+<br> La chaîne de traitements du modèle `masque_entrainement/SCRIPT_MASQUE_ENTRAINEMENT.fmw` est décrite par ce diagramme d'activité : 
 
 
 <div align="center">
@@ -112,7 +112,7 @@ Le résultat de la chaîne de traitements est visible ici :
 ## Structure du dépôt
 
 Les codes et le notebook Python sont regroupés dans le dossier `code/`, et le modèle FME pour la création du masque d'entraînement se trouve dans le dossier `masque_entrainement/` :
-- `masque_entrainement/masque_entraînement.fmw` : Script FME pour générer le masque d'entraînement
+- `masque_entrainement/SCRIPT_MASQUE_ENTRAINEMENT.fmw` : Script FME pour générer le masque d'entraînement
 - `code/lc.json` : Mapping des couleurs 
 - `code/01_PREPROCESSER.py` : Prétraiter les images raster : normaliser les valeurs des images, créer des binômes image/masque de 128 × 128. Autant de binômes par classe
 - `code/02_ENTRAINER.ipynb` : Entraîner, évaluer et enregistrer le modèle
@@ -178,7 +178,7 @@ Cela concerne notamment les fichiers .keras, .qml, .tif.
     <tr><td>04_INFERER.py</td><td>Zenodo + GitHub</td><td>GPL v3</td></tr>
     <tr><td>05_FUSIONNER_SOUS_ENSEMBLE.py</td><td>Zenodo + GitHub</td><td>GPL v3</td></tr>
     <tr><td>06_CARTE_PROBA.py</td><td>Zenodo + GitHub</td><td>GPL v3</td></tr>
-    <tr><td>masque_entraînement.fmw</td><td>Zenodo + GitHub</td><td>GPL v3</td></tr>
+    <tr><td>SCRIPT_MASQUE_ENTRAINEMENT.fmw</td><td>Zenodo + GitHub</td><td>GPL v3</td></tr>
     <tr><td>lc.json</td><td>Zenodo + GitHub</td><td>GPL v3</td></tr>
     <tr><td>lcs.rar (masque d'entraînement)</td><td>Zenodo</td><td>LICENCE OUVERTE / OPEN LICENCE 2.0</td></tr>
     <tr><td>images.rar (image d'entraînement)</td><td>Zenodo</td><td>LICENCE OUVERTE / OPEN LICENCE 2.0</td></tr>
