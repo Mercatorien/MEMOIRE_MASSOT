@@ -163,10 +163,6 @@ Les fichiers d’entraînement sont dérivés de données produites par l’IGN 
 Les fichiers résultant de l'entraînement et de la production cartographique sont publiés sous licence Creative Commons Attribution - Partage dans les mêmes conditions (CC BY-SA).
 Cela concerne notamment les fichiers .keras, .qml, .tif.
 
-Tableau récapitulatif
-html
-Copier
-Modifier
 <table>
   <thead>
     <tr>
@@ -176,14 +172,14 @@ Modifier
     </tr>
   </thead>
   <tbody>
-    <tr><td>01_PREPROCESSER.py</td><td>GitHub</td><td>GPL v3 + MIT (code adapté)</td></tr>
-    <tr><td>02_ENTRAINER.py</td><td>GitHub</td><td>GPL v3 + MIT (code adapté)</td></tr>
-    <tr><td>03_DECOUPER_SOUS_ENSEMBLE.py</td><td>GitHub</td><td>GPL v3</td></tr>
-    <tr><td>04_INFERER.py</td><td>GitHub.py</td><td>GPL v3</td></tr>
-    <tr><td>05_FUSIONNER_SOUS_ENSEMBLE.py</td><td>GitHub</td><td>GPL v3</td></tr>
-    <tr><td>06_CARTE_PROBA.py</td><td>GitHub</td><td>GPL v3</td></tr>
-    <tr><td>masque_entraînement.fmw</td><td>GitHub</td><td>GPL v3</td></tr>
-    <tr><td>lc.json</td><td>GitHub</td><td>GPL v3</td></tr>
+    <tr><td>01_PREPROCESSER.py</td><td>Zenodo + GitHub</td><td>GPL v3 + MIT</td></tr>
+    <tr><td>02_ENTRAINER.py</td><td>Zenodo + GitHub</td><td>GPL v3 + MIT</td></tr>
+    <tr><td>03_DECOUPER_SOUS_ENSEMBLE.py</td><td>Zenodo + GitHub</td><td>GPL v3</td></tr>
+    <tr><td>04_INFERER.py</td><td>Zenodo + GitHub</td><td>GPL v3</td></tr>
+    <tr><td>05_FUSIONNER_SOUS_ENSEMBLE.py</td><td>Zenodo + GitHub</td><td>GPL v3</td></tr>
+    <tr><td>06_CARTE_PROBA.py</td><td>Zenodo + GitHub</td><td>GPL v3</td></tr>
+    <tr><td>masque_entraînement.fmw</td><td>Zenodo + GitHub</td><td>GPL v3</td></tr>
+    <tr><td>lc.json</td><td>Zenodo + GitHub</td><td>GPL v3</td></tr>
     <tr><td>lcs.rar (masque d'entraînement)</td><td>Zenodo</td><td>LICENCE OUVERTE / OPEN LICENCE 2.0</td></tr>
     <tr><td>images.rar (image d'entraînement)</td><td>Zenodo</td><td>LICENCE OUVERTE / OPEN LICENCE 2.0</td></tr>
     <tr><td>UNET_MASSOT.tif</td><td>Zenodo</td><td>CC BY SA</td></tr>
@@ -192,6 +188,7 @@ Modifier
     <tr><td>CARTE_PROBA.tif</td><td>Zenodo</td><td>CC BY SA</td></tr>
   </tbody>
 </table>
+<br>
 
 ---
 
