@@ -211,7 +211,7 @@ function populateLegend() {
                 <div class="info-popup" id="proba-info-popup">
                     <div class="info-popup-content">
                         La carte des probabilité montre la probabilité d'appartenance maximale parmi les six classes, indiquant le niveau de confiance à accorder à la prédiction.<br><br>
-                        <img src='https://github-production-user-asset-6210df.s3.amazonaws.com/173959217/451890714-673778f5-c27e-430e-8ea7-c39931df255d.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20250605%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250605T131819Z&X-Amz-Expires=300&X-Amz-Signature=43e8ea3b5922a48d180a3781ccf61abb1aab52ce9bc89e788027067b02591467&X-Amz-SignedHeaders=host' style='max-width: 450px; margin-top: 18px; border-radius: 4px;'>
+                        <img src='https://github.com/Mercatorien/MEMOIRE_MASSOT/blob/main/css/FCC_PROBA.png?raw=true' style='max-width: 450px; margin-top: 18px; border-radius: 4px;'>
                     </div>
                 </div>`;
             function showPopup() {
