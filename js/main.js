@@ -229,7 +229,7 @@ function populateLegend() {
                     popupEl.style.display = 'block';
                     popupEl.style.position = 'fixed';
                     popupEl.style.left = (panelRect.right + 16) + 'px';
-                    popupEl.style.top = (infoRect.top - 8) + 'px';
+                    popupEl.style.top = (infoRect.top - 90) + 'px';
                     popupEl.style.transform = 'none';
                     popupEl.style.zIndex = 9999;
                 }
