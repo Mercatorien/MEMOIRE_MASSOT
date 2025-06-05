@@ -1,11 +1,12 @@
 // Configuration de la carte
 const map = L.map('map', {
-    center: [43.9493, 4.8059],
-    zoom: 12,
+    center: [46.603354, 1.888334], // centre France
+    zoom: 5,
     zoomControl: false,
     scrollWheelZoom: true,
     zoomSnap: 0.5,
-    zoomDelta: 0.5
+    zoomDelta: 0.5,
+    attributionControl: false // Désactive l'attribution par défaut à droite
 });
 
 // Définir les limites de zoom de la carte
@@ -15,7 +16,7 @@ map.setMaxZoom(18);
 // Configuration des couches de base
 const baseLayers = {
     'Google Satellite': L.tileLayer('https://mt1.google.com/vt/lyrs=s&x={x}&y={y}&z={z}', {
-        attribution: 'Google Satellite',
+        attribution: '',
         maxZoom: 25,
         minZoom: 0,
         subdomains: ['mt0', 'mt1', 'mt2', 'mt3'],
@@ -32,7 +33,7 @@ const occupationSolLayer = L.tileLayer('https://tiles.arcgis.com/tiles/y9Ov7ybba
     maxZoom: 25,
     tileSize: 256,
     opacity: 0.6,
-    attribution: 'N. Massot, 2025',
+    attribution: '',
     errorTileUrl: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=',
     detectRetina: false,
     crossOrigin: true,
@@ -67,39 +68,57 @@ if (rasterToggle.checked) {
     occupationSolLayer.bringToFront();
 }
 
-// --- Ajout de la couche GeoJSON des communes ---
-fetch('https://raw.githubusercontent.com/Mercatorien/MEMOIRE_MASSOT/73865c743217759a58666037f605f0c0d9117db6/communes.geojson')
-  .then(function(response) { return response.json(); })
-  .then(function(data) {
-    const communesLayer = L.geoJSON(data, {
-      style: function() {
-        return {
-          color: '#111', // contours noirs
-          weight: 2,
-          fillOpacity: 0,
-          fill: false
-        };
-      },
-      onEachFeature: function(feature, layer) {
-        // Ajout des labels NOM
-        if (feature.properties && feature.properties.NOM) {
-          const center = layer.getBounds().getCenter();
-          // Ajoute une divIcon centrée sur chaque polygone
-          const label = L.marker(center, {
-            icon: L.divIcon({
-              className: 'commune-label',
-              html: feature.properties.NOM,
-              iconSize: null
-            }),
-            interactive: false
-          });
-          label.addTo(map);
-        }
-      }
+// Animation de zoom : centre France -> Avignon après 0,5s
+setTimeout(() => {
+    map.flyTo([43.96762, 4.80899], 12, {
+        animate: true,
+        duration: 2
     });
-    communesLayer.addTo(map);
-    communesLayer.bringToFront();
+}, 500);
+
+// --- Ajout de la couche GeoJSON des communes ---
+setTimeout(() => {
+  fetch('https://raw.githubusercontent.com/Mercatorien/MEMOIRE_MASSOT/73865c743217759a58666037f605f0c0d9117db6/communes.geojson')
+    .then(function(response) { return response.json(); })
+    .then(function(data) {
+      const communesLayer = L.geoJSON(data, {
+        onEachFeature: function(feature, layer) {
+          // Ajout des labels NOM
+          if (feature.properties && feature.properties.NOM) {
+            const center = layer.getBounds().getCenter();
+            // Toute autre logique JS existante...
+
+// Animation d'apparition harmonique des boutons principaux
+window.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.memoire-btn, .github-btn, .zenodo-btn').forEach((btn) => {
+    btn.classList.add('animated-btn');
   });
+});
+
+            const label = L.marker(center, {
+              icon: L.divIcon({
+                className: 'commune-label',
+                html: feature.properties.NOM,
+                iconSize: null
+              }),
+              interactive: false
+            });
+            label.addTo(map);
+          }
+        },
+        style: function() {
+          return {
+            color: '#111', // contours noirs
+            weight: 2,
+            fillOpacity: 0,
+            fill: false
+          };
+        }
+      });
+      communesLayer.addTo(map);
+      communesLayer.bringToFront();
+    });
+}, 2500);
 
 // Gestion des erreurs de chargement de la couche
 occupationSolLayer.on('loading', function() {
@@ -172,13 +191,68 @@ function populateLegend() {
     const cornToggleDiv = document.createElement('div');
     cornToggleDiv.className = 'layer-control';
     cornToggleDiv.innerHTML = `
-        <label class="toggle-container">
+        <label class="toggle-container" style="position: relative;">
             <input type="checkbox" id="corn-toggle">
             <span class="toggle-slider"></span>
             <span class="toggle-label">Carte des probabilités</span>
+            <span class="info-icon" tabindex="0">
+                <i class="fas fa-info-circle"></i>
+            </span>
         </label>
     `;
     legendContainer.appendChild(cornToggleDiv);
+
+    // Gestion dynamique du pop-up info carte des probabilités hors de l'îlot
+    setTimeout(() => {
+        const infoIcon = document.querySelector('.info-icon');
+        if (infoIcon) {
+            let popup = null;
+            const popupHtml = `
+                <div class="info-popup" id="proba-info-popup">
+                    <div class="info-popup-content">
+                        La carte des probabilité montre la probabilité d'appartenance maximale parmi les six classes, indiquant le niveau de confiance à accorder à la prédiction.<br><br>
+                        <img src='https://github-production-user-asset-6210df.s3.amazonaws.com/173959217/451890714-673778f5-c27e-430e-8ea7-c39931df255d.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20250605%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250605T131819Z&X-Amz-Expires=300&X-Amz-Signature=43e8ea3b5922a48d180a3781ccf61abb1aab52ce9bc89e788027067b02591467&X-Amz-SignedHeaders=host' style='max-width: 450px; margin-top: 18px; border-radius: 4px;'>
+                    </div>
+                </div>`;
+            function showPopup() {
+                if (!popup) {
+                    popup = document.createElement('div');
+                    popup.innerHTML = popupHtml;
+                    document.body.appendChild(popup.firstElementChild);
+                }
+                const popupEl = document.getElementById('proba-info-popup');
+                if (popupEl) {
+                    // Positionner à droite de la légende
+                    const infoRect = infoIcon.getBoundingClientRect();
+                    const panel = document.querySelector('.control-panel');
+                    const panelRect = panel.getBoundingClientRect();
+                    popupEl.style.display = 'block';
+                    popupEl.style.position = 'fixed';
+                    popupEl.style.left = (panelRect.right + 16) + 'px';
+                    popupEl.style.top = (infoRect.top - 8) + 'px';
+                    popupEl.style.transform = 'none';
+                    popupEl.style.zIndex = 9999;
+                }
+            }
+            function hidePopup() {
+                const popupEl = document.getElementById('proba-info-popup');
+                if (popupEl) {
+                    popupEl.remove();
+                }
+                popup = null;
+            }
+            infoIcon.addEventListener('mouseenter', showPopup);
+            infoIcon.addEventListener('focus', showPopup);
+            infoIcon.addEventListener('mouseleave', hidePopup);
+            infoIcon.addEventListener('blur', hidePopup);
+            // Optionnel : fermer au clic partout
+            document.addEventListener('click', function(e) {
+                if (!infoIcon.contains(e.target) && document.getElementById('proba-info-popup')) {
+                    hidePopup();
+                }
+            });
+        }
+    }, 0);
 
     // 6. Slider pour la transparence de la carte des probabilités
     const cornOpacityDiv = document.createElement('div');
@@ -191,16 +265,27 @@ function populateLegend() {
     `;
     legendContainer.appendChild(cornOpacityDiv);
 
-    // 7. Légende de la carte des probabilités
-    const cornLegendDiv = document.createElement('div');
-    cornLegendDiv.className = 'corn-legend';
-    cornLegendDiv.innerHTML = `
-        <span style="display:inline-block;width:18px;height:18px;background:#fa3308;margin-right:8px;"></span>
-        <span>22 %</span>
-        <span style="display:inline-block;width:18px;height:18px;background:#00f51c;margin:0 8px 0 18px;"></span>
-        <span>100 %</span>
-    `;
-    legendContainer.appendChild(cornLegendDiv);
+    // 7. Légende de la carte des probabilités (style harmonisé)
+    const cornLegendValues = [
+        { color: "#fa3308", label: "22&nbsp;%" },
+        { color: "#00f51c", label: "100&nbsp;%" }
+    ];
+    const cornLegendRow = document.createElement('div');
+cornLegendRow.className = 'legend-row';
+cornLegendValues.forEach(item => {
+    const legendItem = document.createElement('div');
+    legendItem.className = 'legend-item';
+    const colorBox = document.createElement('span');
+    colorBox.className = 'legend-color';
+    colorBox.style.background = item.color;
+    const label = document.createElement('span');
+    label.className = 'legend-label';
+    label.innerHTML = item.label;
+    legendItem.appendChild(colorBox);
+    legendItem.appendChild(label);
+    cornLegendRow.appendChild(legendItem);
+});
+legendContainer.appendChild(cornLegendRow);
 
     // Trait horizontal gris entre la légende corn field et le bouton "Mon mémoire"
     const separator = document.createElement('hr');
@@ -235,34 +320,9 @@ function populateLegend() {
 }
 
 
-// Gestion de la modale
-function setupModal() {
-    const modal = document.getElementById('memoire-modal');
-    const btn = document.getElementById('memoire-btn');
-    const span = document.querySelector('.close-modal');
 
-    // Ouverture de la modale
-    btn.onclick = function() {
-        modal.classList.add('show');
-    }
 
-    // Fermeture avec le bouton
-    span.onclick = function() {
-        modal.classList.remove('show');
-    }
 
-    // Fermeture en cliquant en dehors
-    window.onclick = function(event) {
-        if (event.target === modal) {
-            modal.classList.remove('show');
-        }
-    }
-}
-
-// Initialisation de la modale au chargement du DOM
-document.addEventListener('DOMContentLoaded', function() {
-    setupModal();
-});
 
 // Gestionnaire d'événements pour le toggle de la couche
 rasterToggle.addEventListener('change', function() {
@@ -316,7 +376,7 @@ L.control.scale({
 const attribution = L.control.attribution({
     position: 'bottomleft'
 });
-attribution.addAttribution('N. Massot, 2025 | <a href="https://nicolasmassot.fr" target="_blank">nicolasmassot.fr</a>');
+attribution.addAttribution('N. Massot, 2025 | <a href="https://nicolasmassot.fr" target="_blank"></a>');
 attribution.addTo(map);
 
 // Initialisation de la légende
