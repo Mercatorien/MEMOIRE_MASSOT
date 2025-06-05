@@ -98,7 +98,7 @@ header h1 {
 /* Panneau de contrôle */
 #controls {
     position: absolute;
-    top: 140px; /* Position sous le header */
+    top: 160px; /* Position sous le header */
     left: 8px;
     z-index: 1000;
     background: rgba(26, 32, 44, 0.95);
