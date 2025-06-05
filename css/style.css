@@ -25,13 +25,15 @@ body {
 }
 
 .header-content {
-    display: flex;
+    display: grid;
+    grid-template-columns: auto 1fr;
     align-items: center;
-    padding: 0 5rem 0 0;
+    gap: 1.5rem;
+    padding: 0 5rem;
     max-width: 1400px;
-    margin: 0 5rem;
-    position: relative;
+    margin: 0 auto;
 }
+
 
 .header-logo {
     height: 75px;
@@ -46,8 +48,8 @@ body {
 .header-titles {
     flex: 1;
     display: flex;
-    flex-direction: column; 
-    align-items: center;   /* Centre le texte horizontalement dans l’espace restant */
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
     text-align: center;
     min-width: 0;
@@ -66,7 +68,7 @@ header h1 {
 .subtitle {
     color: #c5c8da;
     margin: 0.4rem 0 0 0;
-    font-size: 1.1rem;
+    font-size: 1.5rem;
     font-weight: 400;
     line-height: 1.4;
 }
@@ -144,11 +146,106 @@ header h1 {
     overflow-y: auto;
 }
 
+/* Info icon and popup for probability map switch */
+.info-icon {
+    display: inline-block;
+    color: #63b3ed;
+    margin-left: 8px;
+    cursor: pointer;
+    position: relative;
+    font-size: 1.1em;
+    vertical-align: middle;
+}
+.info-icon:focus {
+    outline: none;
+}
+.info-popup {
+    display: none;
+    position: fixed;
+    left: 50%;
+    top: 110px; /* Ajuste selon la hauteur du panneau */
+    transform: translateX(-50%);
+    z-index: 9999;
+    background: #222b3a;
+    color: #e2e8f0;
+    border-radius: 6px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.25);
+    padding: 24px 32px 18px 32px;
+    width: 500px;
+    font-size: 1.08em;
+    line-height: 1.6;
+    text-align: left;
+    transition: opacity 0.2s;
+    white-space: normal;
+    overflow: visible;
+}
+.info-icon:hover .info-popup,
+.info-icon:focus .info-popup {
+    display: block;
+}
+.info-popup img {
+    display: block;
+    margin: 10px auto 0 auto;
+    max-width: 100%;
+    border-radius: 4px;
+}
+
+.legend-row {
+    display: flex;
+    gap: 18px;
+    align-items: center;
+}
+
+
 /* Bouton Mon mémoire */
-.memoire-btn {
-    width: calc(100% - 30px);
-    padding: 10px 15px;
-    margin: 10px 15px;
+a.memoire-btn {
+/* Animation d’apparition harmonique pour les boutons */
+}
+@keyframes btnEntrance {
+  0% {
+    opacity: 0;
+    transform: translateY(32px) scale(0.96);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(-6px) scale(1.04);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+.animated-btn {
+  opacity: 0;
+  animation: btnEntrance 0.7s cubic-bezier(.68,-0.55,.27,1.55) forwards;
+}
+.animated-btn:nth-of-type(1) { animation-delay: 0.10s; }
+.animated-btn:nth-of-type(2) { animation-delay: 0.22s; }
+.animated-btn:nth-of-type(3) { animation-delay: 0.34s; }
+
+/* Hover dynamique sur boutons */
+.animated-btn:hover, .animated-btn:focus {
+  transform: scale(1.045) translateY(-2px);
+  box-shadow: 0 6px 18px -10px #4398e0a0;
+  transition: transform 0.18s, box-shadow 0.18s;
+}
+
+/* Hover dynamique sur info-icon */
+.info-icon:hover, .info-icon:focus {
+  color: #ffe066;
+  transform: rotate(-10deg) scale(1.18);
+  transition: transform 0.18s, color 0.18s;
+}
+
+/* Hover dynamique sur les items de légende */
+
+a.memoire-btn {
+    display: block;
+    width: 80%;
+    margin: 10px auto 8px auto;
+    box-sizing: border-box;
+    text-align: center;
+    padding: 10px 0;
     background-color: #4398e0;
     color: white;
     border: none;
@@ -156,9 +253,19 @@ header h1 {
     cursor: pointer;
     font-size: 0.95rem;
     transition: opacity 0.3s ease;
-    text-align: center;
     font-weight: 500;
+    text-decoration: none;
 }
+
+a.memoire-btn:hover {
+    opacity: 0.9;
+    text-decoration: none;
+}
+
+a.memoire-btn:not(:last-of-type) {
+    margin-bottom: 8px;
+}
+
 
 .memoire-btn:hover {
     opacity: 0.9;
@@ -256,7 +363,7 @@ header h1 {
 /* Contrôles de couche */
 .layer-control {
     padding: 12px 15px;
-    background: rgba(0, 0, 0, 0.15);
+    background: rgba(26, 32, 44, 0.95); /* même couleur que le panneau */
     border-top: 1px solid rgba(255, 255, 255, 0.05);
     display: flex;
     flex-direction: column;
