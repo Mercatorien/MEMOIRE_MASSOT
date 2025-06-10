@@ -88,7 +88,7 @@ Voici la composition des données agrègées à une grille d'un mètre :
 
 ## Résultat 
 
-L'entraînement du modèle U-Net a été optimisé pour maximiser la précision des prédictions sur les différentes typologies présentes dans le territoire. Le **score-F1 de la segmentation est de 0.91**, et l'**overall accuracy est de 92.2%**.
+L'entraînement du modèle U-Net a été optimisé pour maximiser la précision des prédictions sur les différentes typologies présentes dans le territoire. Le **score-F1 de la segmentation est de 0.91**, l'**overall accuracy est de 92.2%**, le **rappel moyen est de 92.1 %** et l'**IoU est de 0.77**.
 
 <div align="center">
   <img src="https://github.com/user-attachments/assets/429858f5-6356-4cb0-bc57-79861603f978" width="70%"/>
@@ -99,6 +99,21 @@ L'entraînement du modèle U-Net a été optimisé pour maximiser la précision 
 <div align="center">
   <img src="https://github.com/user-attachments/assets/60973231-de09-4efc-b315-26cde251f841" width="70%"/>
 </div>
+
+<br>
+
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/c4b8c0c7-853a-475c-b18c-fd2a13b45114" width="70%"/>
+</div>
+
+<br>
+
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/980bccd4-9038-484b-994f-f1e943d90a06" width="70%"/>
+</div>
+
+<br>
+
 
 ---
 
@@ -112,7 +127,8 @@ Le résultat de la chaîne de traitements est visible ici :
 ## Structure du dépôt
 
 Les codes et le notebook Python sont regroupés dans le dossier `code/`, et le modèle FME pour la création du masque d'entraînement se trouve dans le dossier `masque_entrainement/` :
-- `masque_entrainement/SCRIPT_MASQUE_ENTRAINEMENT.fmw` : Script FME pour générer le masque d'entraînement
+- `masque_entrainement/SCRIPT_MASQUE![8_rappel](https://github.com/user-attachments/assets/c2fd931b-1880-4193-8797-4bee29672510)
+_ENTRAINEMENT.fmw` : Script FME pour générer le masque d'entraînement
 - `code/lc.json` : Mapping des couleurs 
 - `code/01_PREPROCESSER.py` : Prétraiter les images raster : normaliser les valeurs des images, créer des binômes image/masque de 128 × 128. Autant de binômes par classe
 - `code/02_ENTRAINER.ipynb` : Entraîner, évaluer et enregistrer le modèle
