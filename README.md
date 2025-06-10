@@ -127,8 +127,7 @@ Le résultat de la chaîne de traitements est visible ici :
 ## Structure du dépôt
 
 Les codes et le notebook Python sont regroupés dans le dossier `code/`, et le modèle FME pour la création du masque d'entraînement se trouve dans le dossier `masque_entrainement/` :
-- `masque_entrainement/SCRIPT_MASQUE!
-_ENTRAINEMENT.fmw` : Script FME pour générer le masque d'entraînement
+- `masque_entrainement/SCRIPT_MASQUE_ENTRAINEMENT.fmw` : Script FME pour générer le masque d'entraînement
 - `code/lc.json` : Mapping des couleurs 
 - `code/01_PREPROCESSER.py` : Prétraiter les images raster : normaliser les valeurs des images, créer des binômes image/masque de 128 × 128. Autant de binômes par classe
 - `code/02_ENTRAINER.ipynb` : Entraîner, évaluer et enregistrer le modèle
