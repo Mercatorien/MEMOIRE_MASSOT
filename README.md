@@ -8,7 +8,7 @@ Sous la direction de M. Mounir Redjimi & M. Didier Josselin
 
 ## Contexte du projet 
 
-Ce mémoire trouve son origine dans un double contexte. D’abord, il y a une pression à la production de données d’occupation du sol suite aux récentes actions législatives, avec l’objectif **Zéro Artificialisation Nette** en tête. Deuxièmement, les données en libre accès sur le marché sont **perfectibles** sur certains points de vue, qui sont éveloppés et justifiés, notamment en ce qui a trait à l’agilité, la précision et la résolution spatiale et temporelle.
+Ce mémoire trouve son origine dans un double contexte. D’abord, il y a une pression à la production de données d’occupation du sol suite aux récentes actions législatives, avec l’objectif **Zéro Artificialisation Nette** en tête. Deuxièmement, les données en libre accès sur le marché sont **perfectibles** sur certains points de vue, qui sont éveloppés et justifiés dans le mémoire, notamment en ce qui a trait à l’agilité, la précision et la résolution spatiale et temporelle.
 
 ---
 
