@@ -1,5 +1,6 @@
 <h1 align="center">Apport des réseaux de neurones convolutifs à la cartographie de l’occupation du sol : <br> Cas d’usage sur le Grand Avignon</h1> 
 
+[![PDF](https://img.shields.io/badge/Download-PDF-red?style=flat&logo=adobeacrobatreader)](https://github.com/Mercatorien/MEMOIRE_MASSOT/blob/main/MEMOIRE_MASSOT.pdf)
 [![GitHub](https://img.shields.io/badge/GitHub-Repository-black?style=flat&logo=github)](https://github.com/Mercatorien/MEMOIRE_MASSOT/)
 [![Live Demo](https://img.shields.io/badge/Live-Demo-blue?style=flat&logo=vercel)](https://mercatorien.github.io/MEMOIRE_MASSOT/)
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://github.com/Mercatorien/MEMOIRE_MASSOT/tree/main?tab=GPL-3.0-1-ov-file)
