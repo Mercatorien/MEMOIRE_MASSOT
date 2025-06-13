@@ -1,5 +1,11 @@
 <h1 align="center">Apport des réseaux de neurones convolutifs à la cartographie de l’occupation du sol : <br> Cas d’usage sur le Grand Avignon</h1> 
 
+[![GitHub](https://img.shields.io/badge/GitHub-Repository-black?style=flat&logo=github)](https://github.com/Mercatorien/MEMOIRE_MASSOT/)
+[![Live Demo](https://img.shields.io/badge/Live-Demo-blue?style=flat&logo=vercel)](https://mercatorien.github.io/MEMOIRE_MASSOT/)
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://github.com/Mercatorien/MEMOIRE_MASSOT/tree/main?tab=GPL-3.0-1-ov-file)
+
+---
+
 Ce dépôt a été réalisé dans le cadre de mon **mémoire de Master Géomatique et Conduite de Projets Territoriaux**, soutenu en 2025. Il propose la création d'une chaîne de traitements qui a pour but de combler certains axes d'améliorations identifiés dans les données d'occupation du sol actuelles, tout en répondant autant que possible aux besoins métiers des collectivités territoriales dans le suivi de l'occupation du sol.
 
 Sous la direction de M. Mounir Redjimi & M. Didier Josselin
