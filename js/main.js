@@ -16,7 +16,7 @@ map.setMaxZoom(18);
 // Configuration des couches de base
 const baseLayers = {
     'Google Satellite': L.tileLayer('https://mt1.google.com/vt/lyrs=s&x={x}&y={y}&z={z}', {
-        attribution: '',
+        attribution: 'Google Satellite',
         maxZoom: 25,
         minZoom: 0,
         subdomains: ['mt0', 'mt1', 'mt2', 'mt3'],
@@ -210,7 +210,7 @@ function populateLegend() {
             const popupHtml = `
                 <div class="info-popup" id="proba-info-popup">
                     <div class="info-popup-content">
-                        La carte des probabilité montre la probabilité d'appartenance maximale parmi les six classes, indiquant le niveau de confiance à accorder à la prédiction.<br><br>
+                        La carte des probabilité montre la probabilité d'appartenance maximale parmi les six classes, indiquant le niveau de confiance à accorder à la prédiction.
                         <img src='https://github.com/Mercatorien/MEMOIRE_MASSOT/blob/main/css/FCC_PROBA.png?raw=true' style='max-width: 450px; margin-top: 18px; border-radius: 4px;'>
                     </div>
                 </div>`;
