@@ -11,6 +11,8 @@ Ce dépôt a été réalisé dans le cadre de mon **mémoire de Master Géomatiq
 
 Sous la direction de M. Mounir Redjimi & M. Didier Josselin
 
+**Note : 18/20, mention TB**
+
 ---
 
 ## Contexte du projet 
